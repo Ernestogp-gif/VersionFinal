@@ -1,0 +1,16 @@
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+
+body{
+    background-image: url("/img/segundo.png");
+    background-repeat:no-repeat;
+    background-size: 20%;
+    background-position: bottom ;
+    background: rgb(233, 240, 252);	
+}

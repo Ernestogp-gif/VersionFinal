@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mi primer Login</title>
+	
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link href="/style/Recarga.css" rel="stylesheet">
+	
+</head>
+<body>
+	<div class="container d-flex bg-dark">
+        <div class="container">
+            <h3 class="h3 text-light">Consultar transacciones</h3>
+        </div>
+    </div>
+    <div class="container d-flex bg-secondary my-0"> 
+        <a class="btn btn-primary mt-1 mb-1" href="/ConsultaComercioPagos" role="button">Pagos</a>
+        <div class="container">
+          <a class="btn btn-primary mt-1 mb-1" href="/ConsultaComercioRecargas" role="button">Recargas de billetera</a>
+        </div>
+        <div class="container d-flex justify-content-end mt-1 mb-1">
+            <button class="btn btn-primary" type="submit">Descargar reporte</button>
+        </div>   
+    </div>
+    <div class="container d-flex justify-content-center align-items-center bg-light" style="height:auto;">
+        <div class="row" style="height: 73vh;">
+            <div class="col-12 col-lg-4">
+                <img th:src="@{/img/store.jpg}" class="img-thumbnail" alt="..." style="margin-top: 5vh;">
+                <h2 class="h2 text-center">Bodega Charito</h2>
+            </div>
+            <div class="col-12 col-lg-8">
+                <caption>Pagos realizados por el comercio</caption>
+                <div class="table-wrapper-scroll-y my-custom-scrollbar" style="height: 65vh;">
+                  <table class="table table-striped border = 1 table-bordered">
+                    <thead class="table-primary">
+                      <tr>
+                        <th scope="col">Fecha y hora realizada</th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Servicio</th>
+                        <th scope="col">Monto</th>
+                      </tr>
+                    </thead>
+                    <tbody id="TblCuerpo">
+                    </tbody>
+                  </table>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-start align-items-center bg-secondary">
+        <div class="container d-flex align-items-center">
+          <div class="input-group container d-flex align-items-center" style="width: auto;">
+            <blockquote class="blockquote">Fecha Inicio<blockquote>
+            <input id="fecini" type="date" placeholder="" required/>
+          </div>
+          <div class="input-group container d-flex align-items-center" style="width: auto;">
+            <blockquote class="blockquote">Fecha Fin<blockquote>
+            <input id="fecfin" type="date" placeholder="" required/>
+          </div>
+          <div class="container d-flex align-items-center mt-3">
+            <button class="btn btn-primary" type="button" id="button-addon1" onclick="GenerarReportePagosxfechas()">Buscar</button>
+          </div>
+        </div>
+        <div>
+          <div class="container d-flex align-items-center mt-2">
+            <select id="Seleccion" class="form-select" aria-label="seleccionar servicio" style="width: auto;">
+                <option selected>Seleccionar servicio a buscar</option>
+                <option value="1">factura de agua</option>
+                <option value="2">factura de luz</option>
+                <option value="3">recarga celular</option>
+                <option value="4">factura de gas</option>
+                <option value="5">factura de luz</option>
+                <option value="2">factura de internet</option>
+                <option value="2">factura de cable</option>
+            </select>
+            <div class="container d-flex align-items-center">
+              <button onclick="GenerarReportePagosxServicio()" class="btn btn-primary" type="button" id="button-addon1">Buscar</button>
+            </div>
+          </div>
+        </div> 
+    </div>
+        
+    <script th:src="@{/Script/ConsultarComercio.js}"></script>
+    
+    
+</body>
+</html>

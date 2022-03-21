@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reporte Transacciones</title>
+
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="/style/ConsultaEmpresa.css" rel="stylesheet">
+	
+</head>
+<body>
+
+    
+    <div class="container d-flex bg-dark">
+        <div class="container">
+            <h3 class="h3 text-light">Operaciones por Servicios</h3>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <blockquote style="text-indent: 2em;">Fecha Inicio<blockquote>
+        <input id="fec1" type="date" placeholder="" required/>
+        <blockquote style="text-indent: 2em;">Fecha Fin<blockquote>
+        <input id="fec2" type="date" placeholder="" required/>
+    </div> 
+    <div style="text-align: center;">
+      <button  type="button" class="btn btn-secondary">Buscar</button>
+    </div>
+    <div>
+    <table class="table" id="mytable" style="text-align: center" BORDER>
+            <thead class="table-dark">
+                <tr>
+                    <th>Cod_transaccion</th><th>Fecha_hora</th>
+                    <th>Monto</th><th>Tipo_pago</th>
+                    <th>Nombre_comercio</th><th>Tipo_comercio</th>
+                    <th>Distrito</th><th>Departamento</th>
+                    <th>Servicio</th>
+                </tr>
+            </thead>
+            <tbody id="ReporteEmpresa">			
+            </tbody>
+    </table>
+    </div>
+
+	<script th:src="@{/Script/ConsultaEmpresa.js}"></script>
+</body>
+</html>

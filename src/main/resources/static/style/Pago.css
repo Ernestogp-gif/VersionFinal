@@ -1,0 +1,17 @@
+body{
+    background-image: url("/img/segundo.png");
+    background-repeat:no-repeat;
+    background-size: 20%;
+    background-position: bottom ;
+    background: rgb(233, 240, 252);	
+  }
+  
+legend {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+  }
+  
+fieldset {
+    background-color: #eeeeee;
+  }
